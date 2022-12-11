@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>tic tac toe</title>
+</head>
+<body>
+
+    <header class="header">
+        <span class="playerName" id="player1">player 1</span> <span class="XScoreBoard">0</span> (X) vs <span class="playerName" id="player2">player 2</span> <span class="CircleScoreBoard">0</span> (Circle) <button class="changePlayers">change players</button>
+    </header>
+
+    <div class="inputs">
+        <input data-playerName type="text" placeholder="X player name" id="player1name" required> vs
+        <input data-playerName type="text" placeholder="circle player name" id="player2name" required>
+        <button type="submit" id="btn">start</button>
+    </div>
+
+    <div class="endGameScreen">
+        <h2>FIM DE JOGO.</h2>
+        <h3 id="gameResult"></h3>
+        <button id="restartGame">restart</button>
+    </div>
+
+    <main class="board">
+        <div class="square" data-played></div>
+        <div class="square" data-played></div>
+        <div class="square" data-played></div>
+        <div class="square" data-played></div>
+        <div class="square" data-played></div>
+        <div class="square" data-played></div>
+        <div class="square" data-played></div>
+        <div class="square" data-played></div>
+        <div class="square" data-played></div>
+    </main>
+</body>
+</html>

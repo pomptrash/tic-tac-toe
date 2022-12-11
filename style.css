@@ -1,0 +1,162 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+:root {
+    --backgroundImage: 'url(img/x.png)';
+}
+
+body {
+    background-color: darkslategray;
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+    position: relative;
+}
+
+header {
+    font-size: 1.2em;
+    color: white;
+    display: none;
+}
+
+.playerName {
+    text-transform: uppercase;
+    position: relative;
+}
+
+
+.board {
+    background-color: white;
+    width: 400px;
+    height: 400px;
+    display: none;
+    gap: 5px;
+    grid-template-columns: 1fr 1fr 1fr;
+    filter: drop-shadow(2px 3px 5px rgba(0, 0, 0, 0.239));
+    z-index: 0;
+}
+
+.square {
+    background-color: darkslategray;
+    width: 130px;
+    aspect-ratio: 1;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.square:hover:not(.x, .circle):before{
+    content: '';
+    opacity: 0.3;
+    background-image: var(--backgroundImage);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.circle {
+    background-image: url(img/circle.png);
+    background-position: center;
+    background-size: cover;
+    cursor: not-allowed;
+}
+
+
+.x {
+    background-image: url(img/x.png);
+    background-position: center;
+    background-size: cover;
+    cursor: not-allowed;
+}
+
+[data-played="played"] {
+    background-color: rgb(12, 49, 49);
+    cursor: not-allowed !important;
+}
+
+.turn {
+    color: lightseagreen;
+    border-bottom: 1px solid lightseagreen;
+}
+
+.win {
+    background-color: green;
+}
+
+.inputs {
+    padding: 10px;
+    color: white;
+    height: fit-content;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+   
+}
+
+.inputs input {
+    margin: 5px;
+    padding: 5px;
+    background-color: white;
+}
+
+.inputs button {
+    display: block;
+    margin: 10px auto;
+    padding: 5px;
+    width: 50px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+
+}
+
+.endGameScreen {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(47, 79, 79, 0.752);
+    color: white;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 2em;
+    position: absolute;
+    z-index: 1;
+}
+
+.endGameScreen button {
+    display: block;
+    margin: 10px auto;
+    padding: 5px;
+    width: 50px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+.changePlayers {
+    margin-left: 20px;
+    padding: 5px;
+    width: 110px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
